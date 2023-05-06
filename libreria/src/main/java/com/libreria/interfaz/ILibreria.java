@@ -11,10 +11,11 @@ import com.libreria.modelo.Libros;
 
 public interface ILibreria {
 
-	List<Libros> buscarTodas();
-	Libros buscarPorid(Integer idVacante);
-	void guardar(Libros libros);
-
+	public List<Libros> findAll();
+	public Libros buscarPorid(Integer idVacante);
+	public void save(Libros libros);
+	public Libros findOne(Integer id);
+	public void delete(Integer id);
 
 
 

@@ -1,5 +1,7 @@
 package com.libreria.modelo;
 
+import java.io.Serializable;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -9,11 +11,11 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "usuarios")
-public class Libros {
+public class Libros implements Serializable {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "idpsicologia")
+	@Column(name = "idusuarios")
 	private Integer id;
 	private String titulo;
 	public Libros(Integer id, String descripcion) {
@@ -28,11 +30,25 @@ public class Libros {
 	private String autor;
 	private String descripcion;
 	private Integer promocionado;
+	private double precio;
+	private Integer stock;
 
 
 	
 	
 	
+	public Integer getStock() {
+		return stock;
+	}
+	public void setStock(Integer stock) {
+		this.stock = stock;
+	}
+	public double getPrecio() {
+		return precio;
+	}
+	public void setPrecio(double precio) {
+		this.precio = precio;
+	}
 	public Libros(String descripcion) {
 		super();
 		this.descripcion = descripcion;

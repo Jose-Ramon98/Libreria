@@ -49,19 +49,24 @@
     <textarea class="form-control" id="descripcion" name="descripcion" rows="3" placeholder="Ingresa una descripcion del libro"></textarea>
   </div>
   <div class="form-group">
-    <label for="promocionado">¿Es un libro promocionado?</label>
+    <label for="promocionado">Es un libro promocionado?</label>
     <div class="form-check">
       <input class="form-check-input" type="radio" name="promocionado" id="promocionado-si" value="1">
       <label class="form-check-label" for="promocionado-si">
         Si
       </label>
     </div>
+    
     <div class="form-check">
       <input class="form-check-input" type="radio" name="promocionado" id="promocionado-no" value="0" checked>
       <label class="form-check-label" for="promocionado-no">
         No
       </label>
     </div>
+    <div class="form-group">
+    <label for="precio">Precio</label>
+    <input type="number" class="form-control" id="precio" name="precio" placeholder="Ingresa el precio del libro" step="0.01">
+  </div>
   </div>
   <button type="submit" class="btn btn-primary">Crear libro</button>
 </form>

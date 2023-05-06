@@ -33,41 +33,59 @@
   </style>
 <body>
 <!-- para añadir la imagen, en este caso la imagen se llama logo, si se llamase cabra seria cabra.png-->
-	<h1 class="text-info">Lista de Vacantes</h1>
+	<h1 class="text-info">Libros disponibles</h1>
 	<a href="/libros/nuevo" class="btn btn-primary">Crear nuevo libro</a>
 
 	<table class="table table-striped table-bordered table-hover">
- <tr>
-	
-			<th>Id</th>
-			<th>Titulo</th>
-			<th>Autor</th>
-			<th>Descripcion</th>
-			<th>Promocionado</th>
+  <tr>
+    <th>Id</th>
+    <th>Titulo</th>
+    <th>Autor</th>
+    <th>Descripcion</th>
+    <th>Promocionado</th>
+    <th>Precio</th>
+    <th>Editar</th>
+    <th>Eliminar</th>
+    <th>Stock</th>
+    <th>Comprar</th>
+    <th>Devolucion</th>
+  </tr>
+  <tr th:each="vacante:${vacantes}">
+    <td th:text="${vacante.id}"></td>
+    <td th:text="${vacante.titulo}"></td>
+    <td th:text="${vacante.autor}"></td>
+    <td th:text="${vacante.descripcion}"></td>
+    
+    <td>
+      <span th:if="${vacante.promocionado==1}" class="badge badge-success">Promocionado</span>
+      <span th:unless="${vacante.promocionado==1}" class="badge badge-danger"></span>
+    </td>
+     <td th:text="${vacante.precio + '€'}"></td>
+    <td>
+    <a class="btn btn-primary btn-sm" th:href="@{/libros/{id}/editar(id=${vacante.id})}">Editar</a>
+    </td>
+   
+  <td>
+    <form th:action="@{/libros/{id}/eliminar(id=${vacante.id})}" method="POST" onclick="return confirm('¿Estás seguro de que deseas eliminar este libro?')">
+    <input type="hidden" name="_method" value="DELETE"/>
+    <button type="submit" class="btn btn-danger">Eliminar</button>
+</form>
+
+<td th:text="${vacante.stock}"></td>
+<td>
+<form method="post" th:action="@{/libros/{id}/comprar(id=${vacante.id})}" onclick= "return confirm('¿Estás seguro de que deseas comprar este libro?')">
+            <button type="submit" class="btn btn-success">Comprar</button>
+        </form>
+    </td>
+    <td>
+        <form method="post" th:action="@{/libros/{id}/devolver(id=${vacante.id})}" onclick="return confirm('¿Estás seguro de que deseas devolver este libro?')">
+            <button type="submit" class="btn btn-warning">Devolver</button>
+        </form>
+    </td>
+    
+  
+		    	
 			
-			
-			
-		</tr>
-	
-		<tr th:each="vacante:${vacantes}">
-		
-			
-			<td th:text="${vacante.id}"></td>
-			<td th:text="${vacante.titulo}"></td>
-			<td th:text="${vacante.autor}"></td>
-			<td th:text="${vacante.descripcion}"></td>
-			
-			
-			
-		<td>
-			  <span th:if="${vacante.promocionado==1}" class="badge badge-success">Promocioando</span>
-			   <span th:unless="${vacante.promocionado==1}" class="badge badge-danger"></span>
-	
-			 </td>
-	<td>
-			
-			
-			</td>
 			 
 			
 		</tr>
