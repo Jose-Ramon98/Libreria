@@ -40,7 +40,7 @@ public class SugerenciasControladora {
 	
 		Sugerencias sugerencias = new Sugerencias();
 		model.put("sugerencias", sugerencias);
-		model.put("titulo", "Nos interesa mucho su opinión(Con una ruta anidada) y unida a otra tabla en MySql");
+		model.put("titulo", "Nos interesa su opinión");
 			
 	return "form";
 	
