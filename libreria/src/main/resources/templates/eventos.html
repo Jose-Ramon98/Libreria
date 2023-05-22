@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+
+
+<link rel="stylesheet"
+	href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+	integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N"
+	crossorigin="anonymous">
+
+
+</head>
+
+<title>Insert title here</title>
+
+<body>
+
+<div class="d-flex justify-content-center mb-2">
+  <div class="card" style="width: 18rem;">
+    <img th:src="@{/lectura/lectura1.jpg}" class="card-img-top" alt="...">
+    <div class="card-body">
+      <p class="card-text">Comentamos la pelicula, todos juntos fecha: 28/05/2023</p>
+     <form th:action="@{/events/list}" method="post">
+  <button type="submit" class="btn btn-primary">Apuntate YA!</button>
+</form>
+    </div>
+  </div>
+
+  <div class="card" style="width: 18rem;">
+    <img th:src="@{/lectura/lectura4.png}" class="card-img-top" alt=".lectura2">
+    <div class="card-body">
+      <p class="card-text">Club de debate sobre contaminacion, asistira la gran experta Silvia Aracil. Fecha 30/05/2023</p>
+      <form th:action="@{/events/list}" method="post">
+       <button type="submit" class="btn btn-primary">Apuntate YA!</button>
+</form>
+    </div>
+  </div>
+
+  <div class="card" style="width: 18rem;">
+    <img th:src="@{/lectura/lectura3.png}" class="card-img-top" alt="...">
+    <div class="card-body">
+      <p class="card-text">Esta vez sera el turno sobre estoicismo, hablaremos del libro Meditacion del emperador romano Marco Aurelio, fecha 1/06/2023</p>
+     <form th:action="@{/events/list}" method="post">
+       <button type="submit" class="btn btn-primary">Apuntate YA!</button>
+</form>
+    </div>
+  </div>
+</div>
+
+<div class="d-flex justify-content-center mb-2">
+  <div class="card" style="width: 18rem;">
+    <img th:src="@{/lectura/lectura7.jpg}" class="card-img-top" alt="...">
+    <div class="card-body">
+      <p class="card-text">Tercer concurso de escritura: 28/09/2023</p>
+       <form th:action="@{/events/list}" method="post">
+       <button type="submit" class="btn btn-primary">Apuntate YA!</button>
+</form>
+    </div>
+  </div>
+
+  <div class="card" style="width: 18rem;">
+    <img th:src="@{/lectura/lectura5.png}" class="card-img-top" alt=".lectura2">
+    <div class="card-body">
+      <p class="card-text">Club de lectural social. Fecha 30/05/2023</p>
+       <form th:action="@{/events/list}" method="post">
+       <button type="submit" class="btn btn-primary">Apuntate YA!</button>
+</form>
+    </div>
+  </div>
+
+  <div class="card" style="width: 18rem;">
+    <img th:src="@{/lectura/lectura6.jpg}" class="card-img-top" alt="...">
+    <div class="card-body">
+      <p class="card-text">Comentaremos la pelicula "Notre dame", no te lo puedes  perder, fecha 19/06/2023</p>
+    <form th:action="@{/events/list}" method="post"><form th:action="@{/events/list}" method="post">
+       <button type="submit" class="btn btn-primary">Apuntate YA!</button>
+</form>
+    </div>
+  </div>
+</div>
+
+
+
+<script
+	src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"
+	integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct"
+	crossorigin="anonymous"></script>
+	
+	
+</body>
+</html>
+
+

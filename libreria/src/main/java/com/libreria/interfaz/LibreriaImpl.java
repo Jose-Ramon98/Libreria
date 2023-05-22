@@ -13,6 +13,8 @@ import com.libreria.modelo.Libros;
 
 @Service
 public class LibreriaImpl implements ILibreria{
+	
+	
  private List<Libros> lista = null;
 
 @Autowired
@@ -30,12 +32,6 @@ public List<Libros> findAll() {
 		libreriadao.save(libros);// con esto decimos que lo guarde en la lista vacante, escrita arriba
 		
 	}
-
-
-
-
-
-
 
 @Override
 @Transactional(readOnly = true)

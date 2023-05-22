@@ -10,7 +10,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.libreria.modelo.sugerencias.Sugerencias;
 
-@Repository("sugerenciasImplJpa")// marcas la clase como compenente de accceso  a datos, lo registra dentro del contenedeor de string 
+@Repository("sugerenciasImplJpa")// marcas la clase como compenente de accceso  a datos, lo registra dentro del contenedeor de spring 
 public class SugerenciasImpl implements ISugerencias {
 	
 	

@@ -32,7 +32,7 @@ public String mostrarHome (){
 	return "index";
 }
 
-@GetMapping("libreria")
+@GetMapping({"libreria",("")})
 @PostMapping("/libreria")
 public String mostrarLibreria(Model model) {
 
@@ -82,12 +82,6 @@ public String guardarEdicion(@PathVariable("id") Integer id, @ModelAttribute("li
     return "redirect:/libreria";
 }
 
-@GetMapping("/mapa")
-public String mapa(){
-return "mapa";
-   
-}
-
 
 @PostMapping("/libros/{id}/eliminar")
 public String eliminar(@PathVariable(value = "id")Integer id, RedirectAttributes flash) {
@@ -102,7 +96,8 @@ public String eliminar(@PathVariable(value = "id")Integer id, RedirectAttributes
 
 @PostMapping("/stock")
 public String agregarStock(@ModelAttribute("libro") Libros libro, Model model) {
-    libro.setStock(20); // Inicialmente se establece un stock de 20 copias
+    
+	libro.setStock(20); // Inicialmente se establece un stock de 20 copias
     libreria.save(libro);
     return "redirect:/libreria";
 }
@@ -137,6 +132,13 @@ public String devolverLibro(@PathVariable("id") Integer id, Model model) {
 }
 
 
+
+
+@GetMapping("/mapa")
+public String mapa(){
+return "mapa";
+   
+}
 }
 
 
